@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+import GameSetup from './components/GameSetup';
+import ScoreTracker from './components/ScoreTracker';
 import './App.css';
 
+
+
 function App() {
+  const [gameData, setGameData] = useState(null);
+
+  const handleReset = () => {
+    setGameData(null);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!gameData ? (
+        <GameSetup setGameData={setGameData} />
+      ) : (
+        <ScoreTracker gameData={gameData} onReset={handleReset} />
+      )}
     </div>
   );
 }

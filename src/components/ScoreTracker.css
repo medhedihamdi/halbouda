@@ -1,0 +1,98 @@
+/* src/components/ScoreTracker.css */
+.score-tracker {
+  margin: auto;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+.header {
+  background-color: rgba(228, 189, 15, 0.7);
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  width: 90%;
+}
+
+.total-scores {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* إضافة التفاف */
+  margin-top: 5px;
+}
+
+.player-score {
+  flex: 1 1 200px; /* مرونة العنصر لتناسب الحجم المتاح */
+  margin: 10px;
+}
+
+.rounds {
+  margin-top: 20px;
+  overflow-y: auto;
+  flex: 1;
+  padding: 10px;
+  max-height: calc(100vh - 100px);
+}
+
+.round {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.round-scores {
+  display: flex;
+  flex-wrap: wrap; /* إضافة التفاف */
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-mode {
+  background-color: rgba(94, 67, 170, 0.9);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: black
+}
+
+.edit-scores {
+  display: flex;
+  flex-wrap: wrap; /* إضافة التفاف */
+  justify-content: space-around;
+}
+.edit-scores   h2,.edit-scores  h3{
+  color: coral;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    width: 90%;
+    padding: 2px;
+  }
+
+  .total-scores, .edit-scores, .round-scores {
+    flex-direction: column;
+  }
+
+  .player-score, .round, .edit-mode {
+    width: 90%;
+    margin: 2px 0;
+    padding: 2px;
+  }
+
+  .score-tracker {
+    width: 100%;
+  }
+}
